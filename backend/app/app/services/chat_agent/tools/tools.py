@@ -9,6 +9,7 @@ from app.services.chat_agent.tools.library.basellm_tool.basellm_tool import Base
 from app.services.chat_agent.tools.library.image_generation_tool.image_generation_tool import ImageGenerationTool
 from app.services.chat_agent.tools.library.pdf_tool.pdf_tool import PDFTool
 from app.services.chat_agent.tools.library.sql_tool.sql_tool import SQLTool
+from app.services.chat_agent.tools.library.expert_tool.expert_tool import ExpertTool
 from app.services.chat_agent.tools.library.summarizer_tool.summarizer_tool import SummarizerTool
 from app.services.chat_agent.tools.library.visualizer_tool.visualizer_tool import JsxVisualizerTool
 from app.utils.config_loader import get_agent_config
@@ -68,7 +69,7 @@ def get_tools(tools: List[str], load_nested: bool = True) -> List[BaseTool]:
             ImageGenerationTool,
         ),
         ("clarify_tool", BaseLLM),
-        ("expert_tool", BaseLLM),
+        ("expert_tool", ExpertTool),
         ("entertainer_tool", BaseLLM),
     ]
     if load_nested:

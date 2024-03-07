@@ -56,7 +56,7 @@ This is what it looks like:
       - ./db_docker:/var/lib/postgresql
       - ./scripts/1-create-dbs.sql:/docker-entrypoint-initdb.d/1-create-dbs.sql
       - ./backend/app/app/tool_constants/tutorial_data/commit_history.csv:/docker-entrypoint-initdb.d/commit_history.csv
-      - ./scripts/sql_db_tool/2-load_commits.sql:/docker-entrypoint-initdb.d/2-load_commits.sql
+      - ./scripts/sql_db_tool/2-load_recipes.sql:/docker-entrypoint-initdb.d/2-load_recipes.sql
     ports:
       - 5432:5432
     expose:
